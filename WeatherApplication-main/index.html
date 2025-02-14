@@ -9,17 +9,35 @@
 <body>
     <div id="weather-container">
         <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
 
-        <img id="weather-icon" alt="Weather Icon">
+        <!-- City input and search button -->
+        <div class="input-container">
+            <input type="text" id="city" placeholder="Enter city">
+            <button onclick="getWeather()">Search</button>
+        </div>
 
-        <div id="temp-div"></div>
+        <!-- Display weather icon -->
+        <img id="weather-icon" alt="Weather Icon" style="display: none;">
 
+        <!-- Display temperature and unit toggle -->
+        <div id="temp-div">
+            <p id="temperature"></p>
+            <button id="unit-toggle" onclick="toggleUnit()">Switch to °F</button>
+        </div>
+
+        <!-- Display weather info like description, city, and current date/time -->
         <div id="weather-info"></div>
 
+        <!-- Display wind, rain, humidity, and pressure -->
+        <div id="additional-info"></div>
+
+        <!-- Display sunrise and sunset times -->
+        <div id="sun-info"></div>
+
+        <!-- Display hourly forecast -->
         <div id="hourly-forecast"></div>
     </div>
-    <!-- <script src="./script.js"></script> -->
+
+    <script src="./script.js"></script>
 </body>
 </html>
