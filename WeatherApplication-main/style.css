@@ -1,0 +1,195 @@
+body {
+    background: linear-gradient(135deg, #ff7eb9, #feb47b); /* Soft, vibrant gradient background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+    transition: background 0.5s ease, transform 0.5s ease;
+}
+
+#weather-container {
+    background: rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    overflow: hidden;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+button {
+    background: #ff6b81;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #ff4757;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#temp-div p {
+    font-size: 70px;
+    margin-top: -10px;
+    font-weight: bold;
+}
+
+#unit-toggle {
+    background: #00b894;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#unit-toggle:hover {
+    background: #00a88d;
+    transform: translateY(-2px);
+}
+
+#unit-toggle:active {
+    transform: translateY(1px);
+}
+
+#weather-info, #additional-info, #sun-info {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+#weather-icon {
+    width: 180px;
+    height: 180px;
+    margin: 25px auto;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#hourly-forecast {
+    margin-top: 30px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hourly-item:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-2px);
+}
+
+.hourly-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.hourly-item span {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    #weather-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    input {
+        width: 65%;
+        font-size: 14px;
+    }
+
+    button, #unit-toggle {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #temp-div p {
+        font-size: 50px;
+    }
+
+    .hourly-item {
+        width: 70px;
+        padding: 8px;
+    }
+}
